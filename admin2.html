@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<head>
+  <!-- 인코딩 타입 설정 -->
+  <meta charset="utf-8">
+
+  <!-- 초기비율 1, 웹사이트의 넓이를 디바이스에 맞춰서 셋팅 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- 홈페이지 타이틀 -->
+  <title>WSIT - 재무관리</title>
+
+  <!-- 부트스트랩 CSS를 불러옴 -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 부트스트랩 사용자 폰트 -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- 스타일시트 -->
+  <link href="css/agency.min.css" rel="stylesheet">
+
+  <!-- 스크립트-->
+  <script type="text/javascript">
+   //로그아웃
+   window.onload = function() {
+          document.getElementById("logout").onclick = function() {
+            alert("로그아웃 하였습니다. 사용자 페이지로 이동합니다.");
+          }
+       };
+
+     // 이번달 월급을 세금공제 후 수령액 계산
+    function jaemuFunction(){   
+      var a = parseInt(document.getElementById("jaemu1").value); // 판매가격
+      var b = parseFloat(document.getElementById("jaemu2").value); // 이익률
+      var c = parseInt(document.getElementById("jaemu3").value); // 총판매수
+
+      //판매가격 * 이익률 * 총판매수
+      var result = a * b * c;
+
+      alert("총 판매이익은 " + result + "원 입니다.");
+    };
+
+    // 이번달 월급으로 수령한 수령액 계산 프로그램 (40시간 이상 근무시 1.5배수당)
+    function gebyeoFunction(){   
+      // 급여 계산 (세금은 10%)
+      var a = parseInt(document.getElementById("geubyeo1").value); // 본봉
+      var b = parseInt(document.getElementById("geubyeo2").value); // 수당
+      
+      // 세금(10 %) : 본봉+수당*0.1 
+      var c = (a+b) * 0.1;
+      
+      // 본봉 + 수당 - 세금 (세금한 제한 월급)
+      var result = a + b - c;
+
+      alert("이달 월급으로 수령한 금액은 " + result + "원 입니다.");
+     };
+
+     // 시간당 급여 계산 프로그램 
+     function timeGebyeoFunction(){   
+    // 직급, 근무시간, 급여
+    var rank, time, salary;
+    var rank = parseInt(document.getElementById("timegeubyeo1").value);
+    var time = parseInt(document.getElementById("timegeubyeo2").value);
+
+    //근무시간이 40 시간 이하일경우 40시간으로 적용
+    if(time<=40){
+      if(rank == 5){
+        salary=25000*40;
+          alert("근무시간이 40시간 이하 입니다. 40시간으로 적용되어 처리됩니다.")   
+          alert("직급 : "+rank+"급" +"근무시간 : "+time+"시간 "+" 주 급여 : "+ salary + "원");
+    }else if(rank == 6){
+        salary=20000*40;
+          alert("근무시간이 40시간 이하 입니다. 40시간으로 적용되어 처리됩니다.")   
+          alert("직급 : "+rank+"급" +"근무시간 : "+time+"시간 "+" 주 급여 : "+ salary + "원");
+    }else if(rank == 7){
+        salary=17500*40;
+          alert("근무시간이 40시간 이하 입니다. 40시간으로 적용되어 처리됩니다.")   
+          alert("직급 : "+rank+"급" +"근무시간 : "+time+"시간 "+" 주 급여 : "+ salary + "원");
+    }else if(rank == 8){
+        salary=15000*40;
+          alert("근무시간이 40시간 이하 입니다. 40시간으로 적용되어 처리됩니다.")   
+          alert("직급 : "+rank+"급" +"근무시간 : "+time+"시간 "+" 주 급여 : "+ salary + "원");
+    }else if(rank == 9){
+        salary=10000*40;
+          alert("근무시간이 40시간 이하 입니다. 40시간으로 적용되어 처리됩니다.")   
+          alert("직급 : "+rank+"급" +"근무시간 : "+time+"시간 "+" 주 급여 : "+ salary + "원");
+    }else if(rank == 10){
+        salary=8350*40;
+          alert("근무시간이 40시간 이하 입니다. 40시간으로 적용되어 처리됩니다.")   
+          alert("직급 : "+rank+"급" +"근무시간 : "+time+"시간 "+" 주 급여 : "+ salary + "원");
+     }
+  }
+    // 초과근무 * 1.5 배 처리
+    if(time>=40){
+      if(rank == 5){
+        salary=(25000*40)+(time-40)*(1.5*25000);
+        alert("근무시간이 40시간 초과입니다. 초과 근무시간은 1.5배 지급 됩니다.")   
+        alert("직급 : "+rank+"급"+"근무시간 : "+time+"시간"+"주 급여 : "+ salary + "원");
+     } else if(rank == 6) {
+        salary=(20000*40)+(time-40)*(1.5*20000);
+        alert("근무시간이 40시간 초과입니다. 초과 근무시간은 1.5배 지급 됩니다.")   
+        alert("직급 : "+rank+"급"+"근무시간 : "+time+"시간"+"주 급여 : "+ salary + "원");
+     }  else if(rank == 7) {
+        salary=(17500*40)+(time-40)*(1.5*17500);
+        alert("근무시간이 40시간 초과입니다. 초과 근무시간은 1.5배 지급 됩니다.")   
+        alert("직급 : "+rank+"급"+"근무시간 : "+time+"시간"+"주 급여 : "+ salary + "원");
+     } else if(rank == 8) {
+      salary=(15000*40)+(time-40)*(1.5*15000);
+        alert("근무시간이 40시간 초과입니다. 초과 근무시간은 1.5배 지급 됩니다.")   
+        alert("직급 : "+rank+"급"+"근무시간 : "+time+"시간"+"주 급여 : "+ salary + "원");
+     } else if(rank == 9) {
+      salary=(10000*40)+(time-40)*(1.5*10000);
+        alert("근무시간이 40시간 초과입니다. 초과 근무시간은 1.5배 지급 됩니다.")   
+        alert("직급 : "+rank+"급"+"근무시간 : "+time+"시간"+"주 급여 : "+ salary + "원");
+     } else if(rank == 10) {
+      salary=(8350*40)+(time-40)*(1.5*8350);
+        alert("근무시간이 40시간 초과입니다. 초과 근무시간은 1.5배 지급 됩니다.")   
+        alert("직급 : "+rank+"급"+"근무시간 : "+time+"시간"+"주 급여 : "+ salary + "원");
+     }
+    }
+  };
+  </script>
+</head>
+
+<body id="page-top">
+
+  <!-- 네비게이션 -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!-- 회사 로고 -->
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">WSIT</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <!--네비게이션 메뉴 -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin1.html">일정관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin2.html">재무관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin3.html">실적관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin4.html">고객지원</a>
+          </li>
+
+
+        <!-- 네비게이션 드롭박스 메뉴 --> 
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">더보기</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="index.html" id="logout">로그아웃</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <!-- 회사 소개 -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">우송정보기술</div>
+        <div class="intro-heading text-uppercase">WSIT 재무관리</div>
+      </div>
+    </div>
+  </header>
+
+<!-- 바디 -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <!-- 매출액 계산 -->
+         <div>
+          <h3>총 판매 이익금 계산</h3><br>
+          <h6>판매 금액과 이익률을 입력받아 총 판매 이익금을 구하는 프로그램.</h6>
+          <br />
+          <div>
+               <label>상품 판매 가격(원) : </label><input type='text' name='jaemu1' id='jaemu1'>
+               <label>이익률(10% = 0.010 입력) : </label><input type='text' name='jaemu2' id='jaemu2'>
+               <label>총 판매 수(갯수) : </label><input type='text' name='jaemu3' id='jaemu3'>
+               <br />
+               <button onclick="jaemuFunction()">계산</button>
+          </div>
+        </div>
+        <hr />
+     
+
+        <div>
+          <h3>이번달 월급을 세금공제 후 수령액 계산</h3><br>
+          <h6>본봉과 수당을 합하여 세금을 뺀 이달 월급을 계산하는 프로그램 (세금은 10%)</h6>
+          <br />
+          <div>
+               <label>본봉(원) : </label><input type='text' name='geubyeo1' id='geubyeo1'>
+               <label>수당(원) : </label><input type='text' name='geubyeo2' id='geubyeo2'>
+               <br />
+               <button onclick="gebyeoFunction()">계산</button>
+          </div>
+        </div>
+        <hr />
+
+       <div>
+          <h3>시간당 급여 계산</h3><br>
+          <h6>사원의 등급에 따라 시간당 급여가 다음과 같이 지정되어있습니다.<br />
+              (1주일에 40시간이 기본 근무이며, 초과하는 경우 1.5배 지급된다)<br /><br />
+              단, 근무 시간이 40시간 미달일 경우 40시간으로 처리한다.<br />
+            <li>연봉테이블
+              <ul>직급이 9급 = 10000/시간, 직급 10급 = 8,350/시간</ul><br />
+              <ul>직급이 8급 = 15000/시간, 직급 7급 = 17500/시간</ul><br />
+              <ul>직급이 6급 = 20000/시간, 직급 5급 = 25000/시간</ul><br />
+            </li>
+          </h6>
+          <br />
+          <div>
+               <label>직급</label> <input type="text" name="timegeubyeo1" id="timegeubyeo1">
+               <label>근무 시간</label><input type="text" name="timegeubyeo2" id="timegeubyeo2"><br />
+               <button onclick="timeGebyeoFunction()">계산</button>
+          </div>
+        </div>
+        <hr />
+      </div>    
+
+      </div>    
+       </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+
+</body>
+
+</html>

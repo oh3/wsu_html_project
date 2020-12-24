@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<head>
+  <!-- 인코딩 타입 설정 -->
+  <meta charset="utf-8">
+
+  <!-- 초기비율 1, 웹사이트의 넓이를 디바이스에 맞춰서 셋팅 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- 홈페이지 타이틀 -->
+  <title>WSIT - 고객지원</title>
+
+  <!-- 부트스트랩 CSS를 불러옴 -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 부트스트랩 사용자 폰트 -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- 스타일시트 -->
+  <link href="css/agency.min.css" rel="stylesheet">
+
+  <!-- 로그아웃 스크립트 -->
+  <script type="text/javascript">
+  //로그아웃
+   window.onload = function() {
+          document.getElementById("logout").onclick = function() {
+            alert("로그아웃 하였습니다. 사용자 페이지로 이동합니다.");
+          }
+       };
+
+    function newUser(){   
+      alert("신규 사용자를 추가하시겠습니까?");
+    };
+  </script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- 네비게이션 -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!-- 회사 로고 -->
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">WSIT</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <!--네비게이션 메뉴 -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin1.html">일정관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin2.html">재무관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin3.html">실적관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin4.html">고객지원</a>
+          </li>
+
+
+        <!-- 네비게이션 드롭박스 메뉴 --> 
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">더보기</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="index.html" id="logout">로그아웃</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <!-- 회사 소개 -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">우송정보기술</div>
+        <div class="intro-heading text-uppercase">WSIT 고객지원</div>
+      </div>
+    </div>
+  </header>
+
+<!-- 바디 -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <div class="row text-center"
+          <div class="btn-toolbar">
+    <button class="btn btn-primary" onclick="newUser()">New User</button>
+    <button class="btn">앞으로</button>
+    <button class="btn">이전으로</button>
+</div>
+
+<div class="well">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>고객명</th>
+          <th>직급</th>
+          <th>담당 사업명</th>
+          <th>전화번호</th>
+          <th style="width: 36px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>김우송</td>
+          <td>대표</td>
+          <td>우송대학교 홈페이지</td>
+          <td>010-1234-5678</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>애쉴리</td>
+          <td>사원</td>
+          <td>대전시청 홈페이지</td>
+          <td>010-4584-8415</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>제이콥스</td>
+          <td>대리</td>
+          <td>대전대 산학협력단</td>
+          <td>010-4748-7781</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>이초록</td>
+          <td>과장</td>
+          <td>네이버</td>
+          <td>010-3874-8781</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>로빈슨</td>
+          <td>개인사업자</td>
+          <td>개인 블로그</td>
+          <td>010-7845-7778</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>앨버트</td>
+          <td>부장</td>
+          <td>아마존</td>
+          <td>010-5653-0794</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>김원영</td>
+          <td>팀장</td>
+          <td>GDRP</td>
+          <td>010-1843-7813</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>남기설</td>
+          <td>6급</td>
+          <td>대전시청</td>
+          <td>010-8441-7313</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>김주미</td>
+          <td>사원</td>
+          <td>(주)휴메이트</td>
+          <td>010-7465-9424</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>김영식</td>
+          <td>팀장</td>
+          <td>다한물류배송</td>
+          <td>010-1187-7897</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>김두식</td>
+          <td>사원</td>
+          <td>주식회사 필라넷</td>
+          <td>010-1973-4453</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>김민호</td>
+          <td>부장</td>
+          <td>한국통신 신규사업</td>
+          <td>010-7893-8841</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>박해미</td>
+          <td>팀장</td>
+          <td>HRC 무인 서비스</td>
+          <td>010-7715-2543</td>
+          <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Delete Confirmation</h3>
+    </div>
+    <div class="modal-body">
+        <p class="error-text">Are you sure you want to delete the user?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+    </div>
+</div>
+         
+
+        </div>
+      </div>
+  </section>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+
+</body>
+
+</html>

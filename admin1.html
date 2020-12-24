@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<head>
+  <!-- 인코딩 타입 설정 -->
+  <meta charset="utf-8">
+
+  <!-- 초기비율 1, 웹사이트의 넓이를 디바이스에 맞춰서 셋팅 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- 홈페이지 타이틀 -->
+  <title>WSIT - 일정관리</title>
+
+  <!-- 부트스트랩 CSS를 불러옴 -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 부트스트랩 사용자 폰트 -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+<!-- full cal캘린더 -->
+<link href='packages/core/main.css' rel='stylesheet' />
+<link href='packages/daygrid/main.css' rel='stylesheet' />
+<link href='packages/timegrid/main.css' rel='stylesheet' />
+<script src='packages/core/main.js'></script>
+<script src='packages/interaction/main.js'></script>
+<script src='packages/daygrid/main.js'></script>
+<script src='packages/timegrid/main.js'></script>
+
+  <!-- 로그아웃 스크립트 -->
+  <script type="text/javascript">
+  //로그아웃
+   window.onload = function() {
+          document.getElementById("logout").onclick = function() {
+            alert("로그아웃 하였습니다. 사용자 페이지로 이동합니다.");
+          }
+       };
+  </script>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      defaultDate: '2019-06-03',
+      navLinks: true, // can click day/week names to navigate views
+      selectable: true,
+      selectMirror: true,
+      select: function(arg) {
+        var title = prompt('Event Title:');
+        if (title) {
+          calendar.addEvent({
+            title: title,
+            start: arg.start,
+            end: arg.end,
+            allDay: arg.allDay
+          })
+        }
+        calendar.unselect()
+      },
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: '우송정보기술 회식',
+          start: '2019-05-31T18:30:00'
+        },
+        {
+          title: '러닝콘테스트최종점검',
+          start: '2019-06-17T09:00:00'
+        },
+        {
+          title: '서울유유 CMS 사업검토',
+          start: '2019-06-04T10:00:00',
+          end: '2019-06-06T15:00:00'
+        },
+        {
+          title: '한국통신 신규사업검토',
+          start: '2019-06-13T09:30:00'
+        },
+        {
+          title: '대한물류유통 서버점검',
+          start: '2019-06-07T20:00:00'
+        },
+        {
+          title: '한국통신 미팅',
+          start: '2019-06-10T10:00:00',
+        },
+        {
+          title: '우송대학교 미팅',
+          start: '2019-06-25T10:00:00'
+        },
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
+<style>
+
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+</style>
+  <!-- 스타일시트 -->
+  <link href="css/agency.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- 네비게이션 -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!-- 회사 로고 -->
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">WSIT</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <!--네비게이션 메뉴 -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin1.html">일정관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin2.html">재무관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin3.html">실적관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="admin4.html">고객지원</a>
+          </li>
+
+
+        <!-- 네비게이션 드롭박스 메뉴 --> 
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">더보기</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="index.html" id="logout">로그아웃</a>
+        </div>
+      </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <!-- 회사 소개 -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">우송정보기술</div>
+        <div class="intro-heading text-uppercase">WSIT 일정관리</div>
+      </div>
+    </div>
+  </header>
+
+<!-- 바디 -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <div class="row text-center"
+        <div class="col-md-4">
+              <div id='calendar'></div>
+        </div>
+      </div>
+  </section>
+
+ 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+
+</body>
+
+</html>
